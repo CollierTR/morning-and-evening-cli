@@ -13,6 +13,8 @@
     // For nodejs:
     // "lib": ["esnext"],
     "types": ["node"],
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
 
     // Other Outputs
     "sourceMap": true,

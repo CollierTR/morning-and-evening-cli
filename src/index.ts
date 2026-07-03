@@ -9,7 +9,7 @@ const program = new Command();
 program
   .name("Morning and Evening - Devotional")
   .description(
-    `This program is a CLI adaptation of "Morning and Evening" devotional by Charles H. Spurgeon`,
+    `This program is a CLI adaptation of the "Morning and Evening" devotional by Charles H. Spurgeon`,
   )
   .option(
     "-d, --date <date>",

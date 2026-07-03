@@ -1,2 +1,4 @@
 node_modules
 dist
+src/data/source-data.json
+src/data/converter.ts
