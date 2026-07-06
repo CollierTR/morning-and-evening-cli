@@ -1,8 +1,11 @@
 #!/usr/bin/env node
 import { Command, Option } from "commander";
-// import { initCommand } from "./commands/init.js";
+import { getDevotional } from "./controller.js";
+import type { DevotionalOptions } from "./types.js";
 
-const today = new Date().toISOString();
+const month = new Date().getMonth() + 1;
+const day = new Date().getDate();
+const key = `${month}-${day}`;
 
 const program = new Command();
 
@@ -13,8 +16,8 @@ program
   )
   .option(
     "-d, --date <date>",
-    "Specify a date. Defaults to current date.",
-    today,
+    "Specify a date in 'month-day' format. Defaults to current date.",
+    key,
   )
   .addOption(
     new Option("-m --morning", "Opens to the morning devotion").conflicts(
@@ -29,5 +32,5 @@ program
   .version("0.1.0", "-v, --version");
 
 program.parse();
-const options = program.opts();
-console.log(options.date, options.morning, options.evening);
+const options: DevotionalOptions = program.opts();
+getDevotional(options);
